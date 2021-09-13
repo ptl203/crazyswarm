@@ -9,9 +9,9 @@ Z = 1.0
 TAKEOFF_DURATION = 2.5
 GOTO_DURATION = 3.0
 WAYPOINTS = np.array([
-    (1.0, 0.0, Z),
-    (1.0, 1.0, Z),
-    (0.0, 1.0, Z),
+    (0.2, 0.0, Z),
+    (0.2, 0.2, Z),
+    (0.0, 0.2, Z),
     (0.0, 0.0, Z),
 ])
 

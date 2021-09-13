@@ -12,6 +12,7 @@ find_package(catkin REQUIRED COMPONENTS
   libobjecttracker
   libmotioncapture
   tf_conversions
+  rospy
 )
 
 set (CMAKE_CXX_STANDARD 11)
@@ -199,6 +200,15 @@ target_link_libraries(mocap_helper
   ${catkin_LIBRARIES}
 )
 
+## Declare a cpp executable
+add_executable(hello_crazyflie
+  scripts/hello_crazyflie.cpp
+)
+
+target_link_libraries(hello_crazyflie
+  ${catkin_LIBRARIES}
+)
+
 #############
 ## Install ##
 #############
@@ -208,10 +218,10 @@ target_link_libraries(mocap_helper
 
 ## Mark executable scripts (Python etc.) for installation
 ## in contrast to setup.py, you can choose the destination
-# install(PROGRAMS
-#   scripts/my_python_script
-#   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-# )
+#install(PROGRAMS
+#  scripts/crazyflie_interface.py
+#  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+#)
 
 ## Mark executables and/or libraries for installation
 # install(TARGETS crazyswarm crazyswarm_node
@@ -233,6 +243,10 @@ target_link_libraries(mocap_helper
 #   # myfile2
 #   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 # )
+
+#catkin_install_python(PROGRAMS scripts/crazyflie_interface.py
+#    DESTINATION $(CATKIN_PACKAGE_BIN_DESTINATION)
+#)
 
 #############
 ## Testing ##

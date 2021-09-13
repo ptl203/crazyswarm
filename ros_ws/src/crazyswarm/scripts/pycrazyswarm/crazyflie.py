@@ -191,6 +191,9 @@ class Crazyflie:
             duration (float): How long until the height is reached. Seconds.
             groupMask (int): Group mask bits. See :meth:`setGroupMask()` doc.
         """
+        print("groupmask: ", groupMask)
+        print("targetHeight: ", targetHeight)
+        print("duration: ", duration)
         self.takeoffService(groupMask, targetHeight, rospy.Duration.from_sec(duration))
 
     def land(self, targetHeight, duration, groupMask = 0):
